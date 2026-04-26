@@ -1,0 +1,10 @@
+/* ─── PrivaPDF — Main Stylesheet ─── */
+@import './tokens.css';
+@import './base.css';
+@import './components/topbar.css';
+@import './components/sidebar.css';
+@import './components/toolbar.css';
+@import './components/canvas.css';
+@import './components/inspector.css';
+@import './components/shared.css';
+@import './components/edit-mode.css';

@@ -1,0 +1,129 @@
+/* ─── Canvas Area ─── */
+.editor-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.canvas-area {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  padding: var(--sp-6);
+  background: var(--bg);
+  position: relative;
+}
+
+.page-container {
+  position: relative;
+  box-shadow: 0 0 0 1px var(--border), var(--shadow-lg);
+  background: #fff;
+  display: inline-block;
+  cursor: crosshair;
+  transition: box-shadow var(--transition-slow);
+}
+
+.page-container:hover {
+  box-shadow: 0 0 0 1px var(--border2), var(--shadow-lg);
+}
+
+.page-container.tool-select { cursor: default; }
+.page-container.tool-text { cursor: text; }
+.page-container.tool-rect { cursor: crosshair; }
+
+#pdf-canvas { display: block; }
+
+/* Overlay layers */
+#annotation-layer {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+}
+
+#interaction-layer {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+/* ─── Redact Rects ─── */
+.redact-rect {
+  position: absolute;
+  background: #000;
+  cursor: move;
+  transition: box-shadow var(--transition-fast);
+}
+
+.redact-rect:hover {
+  box-shadow: 0 0 0 2px var(--danger);
+}
+
+.redact-rect .del-btn {
+  position: absolute;
+  top: -8px; right: -8px;
+  width: 16px; height: 16px;
+  background: var(--danger);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  border: none;
+  z-index: 5;
+}
+
+.redact-rect:hover .del-btn { opacity: 1; }
+
+/* ─── Text Overlays ─── */
+.text-overlay {
+  position: absolute;
+  background: rgba(255, 255, 150, 0.9);
+  border: 1px solid #cca800;
+  padding: 2px 4px;
+  font-size: 14px;
+  min-width: 80px;
+  min-height: 24px;
+  cursor: move;
+  display: flex;
+  align-items: flex-start;
+  border-radius: 2px;
+  box-shadow: var(--shadow-sm);
+  animation: slideUp 0.15s ease;
+}
+
+.text-overlay input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: inherit;
+  font-family: inherit;
+  color: #000;
+  width: 100%;
+  min-width: 60px;
+}
+
+.text-overlay .del-btn {
+  position: absolute;
+  top: -8px; right: -8px;
+  width: 16px; height: 16px;
+  background: var(--danger);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  border: none;
+}
+
+.text-overlay:hover .del-btn { opacity: 1; }

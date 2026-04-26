@@ -1,0 +1,77 @@
+/* ─── Design Tokens ─── */
+:root {
+  /* Colors — Dark palette with gold accent */
+  --bg: #0f0f0f;
+  --surface: #181818;
+  --surface2: #222222;
+  --surface3: #2a2a2a;
+  --border: #2a2a2a;
+  --border2: #383838;
+  --border3: #484848;
+
+  /* Text hierarchy */
+  --text: #e8e4dc;
+  --text2: #8a857c;
+  --text3: #4a4640;
+
+  /* Accent — Warm Gold */
+  --accent: #d4a853;
+  --accent2: #b8924a;
+  --accent-glow: rgba(212, 168, 83, 0.15);
+  --accent-glow2: rgba(212, 168, 83, 0.08);
+
+  /* Semantic */
+  --danger: #c0513a;
+  --danger-bg: rgba(192, 81, 58, 0.15);
+  --danger-border: rgba(192, 81, 58, 0.3);
+  --success: #4a9e6b;
+  --success-bg: rgba(74, 158, 107, 0.15);
+  --success-border: rgba(74, 158, 107, 0.3);
+  --info: #4a7ec0;
+  --info-bg: rgba(74, 126, 192, 0.15);
+  --info-border: rgba(74, 126, 192, 0.3);
+
+  /* Typography */
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-sans: 'Sora', sans-serif;
+
+  /* Spacing scale (4px base) */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+
+  /* Radii */
+  --radius-sm: 3px;
+  --radius: 5px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 50%;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.6);
+  --shadow-accent: 0 0 20px rgba(212, 168, 83, 0.1);
+
+  /* Transitions */
+  --transition-fast: 0.12s ease;
+  --transition: 0.2s ease;
+  --transition-slow: 0.3s ease;
+
+  /* Layout */
+  --topbar-height: 52px;
+  --toolbar-height: 44px;
+  --sidebar-width: 240px;
+  --panel-width: 260px;
+  --statusbar-height: 24px;
+
+  /* Glass */
+  --glass-bg: rgba(24, 24, 24, 0.85);
+  --glass-blur: blur(12px);
+}

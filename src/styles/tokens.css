@@ -2,6 +2,8 @@
 :root {
   /* Colors — Dark palette with gold accent */
   --bg: #0f0f0f;
+  --bg1: #141414;
+  --bg-layer1: #1e1e1e;
   --surface: #181818;
   --surface2: #222222;
   --surface3: #2a2a2a;
@@ -11,6 +13,7 @@
 
   /* Text hierarchy */
   --text: #e8e4dc;
+  --text1: #e8e4dc;
   --text2: #8a857c;
   --text3: #4a4640;
 
@@ -19,6 +22,8 @@
   --accent2: #b8924a;
   --accent-glow: rgba(212, 168, 83, 0.15);
   --accent-glow2: rgba(212, 168, 83, 0.08);
+  --primary: #d4a853;
+  --primary-light: rgba(212, 168, 83, 0.1);
 
   /* Semantic */
   --danger: #c0513a;
@@ -74,4 +79,41 @@
   /* Glass */
   --glass-bg: rgba(24, 24, 24, 0.85);
   --glass-blur: blur(12px);
+}
+
+/* ─── Light Mode Tokens ─── */
+[data-theme="light"] {
+  --bg: #f0ede8;
+  --bg1: #e8e4de;
+  --bg-layer1: #ffffff;
+  --surface: #faf8f5;
+  --surface2: #f0ede8;
+  --surface3: #e8e4dc;
+  --border: #ddd9d2;
+  --border2: #ccc8c0;
+  --border3: #b8b4ac;
+
+  --text: #1a1714;
+  --text1: #1a1714;
+  --text2: #5a5650;
+  --text3: #9a9690;
+
+  --accent: #b8872a;
+  --accent2: #9a7020;
+  --accent-glow: rgba(184, 135, 42, 0.15);
+  --accent-glow2: rgba(184, 135, 42, 0.08);
+  --primary: #b8872a;
+  --primary-light: rgba(184, 135, 42, 0.1);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.18);
+  --shadow-accent: 0 0 20px rgba(184, 135, 42, 0.12);
+
+  --glass-bg: rgba(250, 248, 245, 0.9);
+}
+
+/* ─── Smooth Theme Transition ─── */
+*, *::before, *::after {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.15s ease, box-shadow 0.25s ease !important;
 }

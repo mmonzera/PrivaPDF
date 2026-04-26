@@ -33,6 +33,15 @@ const ICONS = {
   edit: `<svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor"><path d="M12.146.146a.5.5 0 01.708 0l3 3a.5.5 0 010 .708l-10 10a.5.5 0 01-.168.11l-5 2a.5.5 0 01-.65-.65l2-5a.5.5 0 01.11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 01.5.5v.5h.5a.5.5 0 01.5.5v.5h.293l6.5-6.5z"/></svg>`,
 };
 
+// ─── Theme Helper ─────────────────────────────────────────────────────────────
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('privapdf-theme', theme);
+  const btn = document.getElementById('btn-theme-toggle');
+  if (btn) btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+  if (btn) btn.title = theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+}
+
 
 
 // ─── Render App Shell ─────────────────────────────────────────────────────────
@@ -50,6 +59,7 @@ function renderApp() {
       <div class="file-name-display hidden" id="file-name-display"></div>
       <div class="topbar-right">
         <button class="lang-toggle" id="lang-toggle">${getLocale() === 'en' ? 'ID' : 'EN'}</button>
+        <button class="theme-toggle" id="btn-theme-toggle" title="Toggle Light/Dark Mode">☀️</button>
         <button class="btn" id="btn-manage-docs" style="display:none;">📄 Docs</button>
         <button class="btn" id="btn-open-file">${ICONS.folder} ${t('btnOpen')}</button>
         <button class="btn btn-primary hidden" id="btn-export" disabled>${ICONS.download} ${t('btnExport')}</button>
@@ -227,6 +237,14 @@ function wireEvents() {
   $('#file-input').onchange = (e) => {
     if (e.target.files[0]) loadPDF(e.target.files[0]);
     e.target.value = '';
+  };
+
+  // Theme toggle
+  const savedTheme = localStorage.getItem('privapdf-theme') || 'dark';
+  applyTheme(savedTheme);
+  $('#btn-theme-toggle').onclick = () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    applyTheme(current === 'dark' ? 'light' : 'dark');
   };
 
   // Dropzone

@@ -76,3 +76,24 @@
   border-color: var(--text2);
   color: var(--text2);
 }
+
+/* Theme Toggle */
+.theme-toggle {
+  font-size: 14px;
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  background: var(--accent-glow2);
+  transform: scale(1.1);
+}

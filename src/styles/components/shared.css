@@ -152,5 +152,7 @@
 .layout {
   display: flex;
   height: calc(100vh - var(--topbar-height));
+  max-height: calc(100vh - var(--topbar-height));
   margin-top: var(--topbar-height);
+  overflow: hidden;
 }
